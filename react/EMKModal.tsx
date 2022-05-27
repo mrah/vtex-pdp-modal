@@ -22,7 +22,6 @@ const EMKModal: StorefrontFunctionComponent<ModalProps> = ({ imgUrl, pid, cid, s
   const uniqueId = 'Modal_' + productId || categoryId;
 
   useEffect(() => {
-    console.log(localStorage.getItem(uniqueId));
     const storage = localStorage.getItem(uniqueId) || JSON.stringify({ shown: false });
     const storageData = JSON.parse(storage);
 
