@@ -1,7 +1,7 @@
 {
   "vendor": "emakinapartnerbe",
   "name": "emk-pdp-modal",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "title": "Modal Component",
   "description": "Modal component to show image inside.",
   "defaultLocale": "en-US",
