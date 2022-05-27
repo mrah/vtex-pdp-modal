@@ -22,13 +22,15 @@ const EMKModal: StorefrontFunctionComponent<ModalProps> = ({ imgUrl, pid, cid, s
   const uniqueId = 'Modal_' + productId || categoryId;
 
   useEffect(() => {
-    const storage = JSON.parse(localStorage.getItem(uniqueId) || "");
+    console.log(localStorage.getItem(uniqueId));
+    const storage = localStorage.getItem(uniqueId) || JSON.stringify({ shown: false });
+    const storageData = JSON.parse(storage);
 
     if ((pid === productId || cid === categoryId) && !showOnce) {
       setModalOpen(true);
     }
 
-    if (storage && !storage?.shown && showOnce) {
+    if (storage && !storageData?.shown && showOnce) {
       if (pid === productId || cid === categoryId) {
         localStorage.setItem(uniqueId, JSON.stringify({ shown: true }));
         setModalOpen(true);
